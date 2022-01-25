@@ -5,7 +5,8 @@ chrome.runtime.onInstalled.addListener(() => {
     id: 'copy-syosetu',
     title: '(Clipboard) 小説全体を読み上げ用にコピー',
     documentUrlPatterns: [
-      'https://*.syosetu.com/**'
+      'https://ncode.syosetu.com/**',
+      'https://novel18.syosetu.com/**'
     ]
   })
 })
