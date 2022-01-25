@@ -24,21 +24,32 @@ chrome.contextMenus.onClicked.addListener((item) => {
   }
 })
 
+function copyToClipboard(text) {
+  const textArea = document.createElement('textarea')
+  document.body.appendChild(textArea)
+
+  textArea.value = text
+  textArea.select()
+
+  document.execCommand('copy')
+  document.body.removeChild(textArea)
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   const { method } = message
   console.log(`received message ${method} in background`)
 
   if (method === 'send-clipboard') {
     const { text } = message
+    const tabId = sender.tab.id
 
-    const textArea = document.createElement('textarea')
-    document.body.appendChild(textArea)
-
-    textArea.value = text
-    textArea.select()
-
-    document.execCommand('copy')
-    document.body.removeChild(textArea)
+    chrome.scripting.executeScript({
+      target: {
+        tabId: tabId
+      },
+      function: copyToClipboard,
+      args: [text]
+    })
   }
 
   return true
