@@ -1,7 +1,7 @@
-console.log(`iframe content script loaded: ${location.href}`)
+console.log(`content script loaded: ${location.href}`)
 
 chrome.runtime.onMessage.addListener(({method}, sender, sendResponse) => {
-  console.log(`received message ${method} in iframe`)
+  console.log(`received message ${method}`)
 
   if (method === 'copy-syosetu') {
     const root = document.cloneNode(true)

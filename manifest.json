@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "syosetu-yomicopy-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "小説家になろうの小説ページを、音声合成ソフトによる読み上げ用に整形してクリップボードにコピーするためのChrome拡張機能",
   "permissions": [
     "activeTab",
@@ -17,7 +17,7 @@
         "https://ncode.syosetu.com/**",
         "https://novel18.syosetu.com/**"
       ],
-      "all_frames": true,
+      "all_frames": false,
       "js": [ "src/content.js" ]
     }
   ]
