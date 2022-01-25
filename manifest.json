@@ -1,6 +1,6 @@
 {
-  "name": "syosetu-extension",
   "manifest_version": 2,
+  "name": "copy-yomi-extension",
   "version": "0.1.0",
   "description": "syosetu",
   "permissions": [
@@ -11,7 +11,7 @@
     "scripts": [
       "src/background.js"
     ],
-    "persistent": true
+    "persistent": false
   },
   "content_scripts": [
     {
