@@ -20,7 +20,7 @@
         "https://*.syosetu.com/**"
       ],
       "all_frames": true,
-      "js": [ "src/iframe.js" ]
+      "js": [ "src/content.js" ]
     }
   ]
 }
